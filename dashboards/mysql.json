@@ -14,7 +14,7 @@
       "type": "grafana",
       "id": "grafana",
       "name": "Grafana",
-      "version": "6.6.1"
+      "version": "6.7.1"
     },
     {
       "type": "panel",
@@ -38,6 +38,7 @@
   "annotations": {
     "list": [
       {
+        "$$hashKey": "object:3194",
         "builtIn": 1,
         "datasource": "-- Grafana --",
         "enable": true,
@@ -53,7 +54,7 @@
   "gnetId": 11499,
   "graphTooltip": 0,
   "id": null,
-  "iteration": 1583519024658,
+  "iteration": 1585861923423,
   "links": [
     {
       "icon": "external link",
@@ -110,7 +111,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "s",
       "postfixFontSize": "80%",
       "prefix": "",
@@ -147,6 +147,7 @@
             }
           ],
           "measurement": "mysql",
+          "orderByTime": "ASC",
           "policy": "default",
           "query": "SELECT last(value) FROM \"mysql_value\" WHERE \"instance\" = 'status' AND \"type_instance\" = 'Uptime' AND \"host\" =~ /^$host$/ AND $timeFilter GROUP BY time(10s) fill(null)",
           "rawQuery": false,
@@ -166,7 +167,13 @@
               }
             ]
           ],
-          "tags": [],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            }
+          ],
           "target": "servers.$host.mysql-status.gauge-Uptime",
           "textEditor": true
         }
@@ -620,7 +627,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "80%",
       "prefix": "",
@@ -678,7 +684,13 @@
               }
             ]
           ],
-          "tags": [],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            }
+          ],
           "target": "perSecond(servers.$host.mysql-status.counter-Queries)",
           "textEditor": true
         }
@@ -5376,8 +5388,8 @@
         "auto_min": "10s",
         "current": {
           "selected": false,
-          "text": "10s",
-          "value": "10s"
+          "text": "auto",
+          "value": "$__auto_interval_interval"
         },
         "datasource": null,
         "hide": 0,
@@ -5387,7 +5399,7 @@
         "name": "interval",
         "options": [
           {
-            "selected": false,
+            "selected": true,
             "text": "auto",
             "value": "$__auto_interval_interval"
           },
@@ -5402,7 +5414,7 @@
             "value": "5s"
           },
           {
-            "selected": true,
+            "selected": false,
             "text": "10s",
             "value": "10s"
           },
@@ -5478,7 +5490,8 @@
         "datasource": "${DS_INFLUXDB}",
         "definition": "",
         "hide": 0,
-        "includeAll": true,
+        "includeAll": false,
+        "index": -1,
         "label": "host",
         "multi": false,
         "name": "host",
@@ -5497,7 +5510,7 @@
     ]
   },
   "time": {
-    "from": "now-5m",
+    "from": "now-1h",
     "to": "now"
   },
   "timepicker": {
@@ -5528,5 +5541,8 @@
   "timezone": "",
   "title": "MySQL",
   "uid": "z7e2o4kWz2",
-  "version": 3
+  "variables": {
+    "list": []
+  },
+  "version": 4
 }

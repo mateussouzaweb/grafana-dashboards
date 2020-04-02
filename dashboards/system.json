@@ -20,7 +20,7 @@
       "type": "grafana",
       "id": "grafana",
       "name": "Grafana",
-      "version": "6.6.1"
+      "version": "6.7.1"
     },
     {
       "type": "panel",
@@ -44,6 +44,7 @@
   "annotations": {
     "list": [
       {
+        "$$hashKey": "object:11789",
         "builtIn": 1,
         "datasource": "-- Grafana --",
         "enable": false,
@@ -61,7 +62,7 @@
   "gnetId": 11496,
   "graphTooltip": 0,
   "id": null,
-  "iteration": 1583760031557,
+  "iteration": 1585862003995,
   "links": [
     {
       "icon": "external link",
@@ -128,7 +129,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -246,7 +246,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -384,7 +383,7 @@
         "showThresholdLabels": false,
         "showThresholdMarkers": true
       },
-      "pluginVersion": "6.6.1",
+      "pluginVersion": "6.7.1",
       "targets": [
         {
           "dsType": "influxdb",
@@ -506,7 +505,7 @@
         "showThresholdLabels": false,
         "showThresholdMarkers": true
       },
-      "pluginVersion": "6.6.1",
+      "pluginVersion": "6.7.1",
       "targets": [
         {
           "dsType": "influxdb",
@@ -585,7 +584,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -703,7 +701,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -821,7 +818,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -925,7 +921,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -1044,7 +1039,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -1162,7 +1156,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -1281,7 +1274,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -1402,7 +1394,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -1522,7 +1513,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -1643,7 +1633,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "pluginVersion": "6.5.2",
       "postfix": "",
       "postfixFontSize": "50%",
@@ -1773,7 +1762,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -1893,7 +1881,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -2013,7 +2000,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -2133,7 +2119,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -4483,7 +4468,8 @@
         "datasource": "${DS_INFLUXDB}",
         "definition": "SHOW TAG VALUES FROM \"system\" WITH KEY = \"host\"",
         "hide": 0,
-        "includeAll": true,
+        "includeAll": false,
+        "index": -1,
         "label": "host",
         "multi": false,
         "name": "host",
@@ -4497,7 +4483,7 @@
         "tags": [],
         "tagsQuery": "",
         "type": "query",
-        "useTags": true
+        "useTags": false
       },
       {
         "allValue": null,
@@ -4506,6 +4492,7 @@
         "definition": "SHOW TAG VALUES FROM \"cpu\" WITH KEY = \"cpu\" WHERE \"host\" =~ /$host/",
         "hide": 0,
         "includeAll": true,
+        "index": -1,
         "label": "cpu",
         "multi": false,
         "name": "cpu",
@@ -4544,5 +4531,8 @@
   "timezone": "",
   "title": "System",
   "uid": "g-sKGPYWz",
-  "version": 6
+  "variables": {
+    "list": []
+  },
+  "version": 2
 }

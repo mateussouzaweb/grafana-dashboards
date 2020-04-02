@@ -20,7 +20,7 @@
       "type": "grafana",
       "id": "grafana",
       "name": "Grafana",
-      "version": "6.6.1"
+      "version": "6.7.1"
     },
     {
       "type": "panel",
@@ -38,6 +38,7 @@
   "annotations": {
     "list": [
       {
+        "$$hashKey": "object:12308",
         "builtIn": 1,
         "datasource": "-- Grafana --",
         "enable": false,
@@ -52,10 +53,10 @@
   },
   "description": "by MateusSouzaWeb",
   "editable": true,
-  "gnetId": 11496,
+  "gnetId": 11861,
   "graphTooltip": 0,
   "id": null,
-  "iteration": 1583518891522,
+  "iteration": 1585861510088,
   "links": [
     {
       "icon": "external link",
@@ -139,7 +140,7 @@
         "showThresholdLabels": false,
         "showThresholdMarkers": true
       },
-      "pluginVersion": "6.6.1",
+      "pluginVersion": "6.7.1",
       "targets": [
         {
           "alias": "$tag_device - $tag_path",
@@ -1430,9 +1431,8 @@
         "auto_count": 30,
         "auto_min": "10s",
         "current": {
-          "selected": false,
-          "text": "10s",
-          "value": "10s"
+          "text": "",
+          "value": ""
         },
         "hide": 0,
         "label": null,
@@ -1454,7 +1454,7 @@
             "value": "5s"
           },
           {
-            "selected": true,
+            "selected": false,
             "text": "10s",
             "value": "10s"
           },
@@ -1530,7 +1530,8 @@
         "datasource": "${DS_INFLUXDB}",
         "definition": "SHOW TAG VALUES FROM \"system\" WITH KEY = \"host\"",
         "hide": 0,
-        "includeAll": true,
+        "includeAll": false,
+        "index": -1,
         "label": "host",
         "multi": false,
         "name": "host",
@@ -1544,7 +1545,7 @@
         "tags": [],
         "tagsQuery": "",
         "type": "query",
-        "useTags": true
+        "useTags": false
       },
       {
         "allValue": null,
@@ -1553,6 +1554,7 @@
         "definition": "SHOW TAG VALUES FROM \"disk\" WITH KEY = \"device\" WHERE \"host\" =~ /$host/",
         "hide": 0,
         "includeAll": true,
+        "index": -1,
         "label": "disk",
         "multi": true,
         "name": "disk",
@@ -1566,7 +1568,7 @@
         "tags": [],
         "tagsQuery": "",
         "type": "query",
-        "useTags": true
+        "useTags": false
       },
       {
         "allValue": ".*",
@@ -1575,6 +1577,7 @@
         "definition": "SHOW TAG VALUES FROM \"diskio\" WITH key = \"name\" WHERE \"host\" =~ /^$host$/ AND \"name\" =~ /^([sh]d[a-z]+|md[0-9]+|dm(-)?[0-9]+)([0-9]+)?$/",
         "hide": 0,
         "includeAll": true,
+        "index": -1,
         "label": "iodevice",
         "multi": true,
         "name": "iodevice",
@@ -1613,5 +1616,8 @@
   "timezone": "",
   "title": "Disk & IO",
   "uid": "KeWGZulZk",
-  "version": 9
+  "variables": {
+    "list": []
+  },
+  "version": 5
 }

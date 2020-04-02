@@ -14,7 +14,7 @@
       "type": "grafana",
       "id": "grafana",
       "name": "Grafana",
-      "version": "6.5.2"
+      "version": "6.7.1"
     },
     {
       "type": "panel",
@@ -44,6 +44,7 @@
   "annotations": {
     "list": [
       {
+        "$$hashKey": "object:2496",
         "builtIn": 1,
         "datasource": "-- Grafana --",
         "enable": true,
@@ -56,10 +57,10 @@
   },
   "description": "by MateusSouzaWeb",
   "editable": true,
-  "gnetId": 5763,
+  "gnetId": 11502,
   "graphTooltip": 0,
   "id": null,
-  "iteration": 1578005731625,
+  "iteration": 1585861846841,
   "links": [
     {
       "icon": "external link",
@@ -126,7 +127,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -184,9 +184,9 @@
           ],
           "tags": [
             {
-              "key": "engine_host",
+              "key": "host",
               "operator": "=~",
-              "value": "/^$dockerhost$/"
+              "value": "/^$host$/"
             }
           ]
         }
@@ -245,7 +245,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -303,9 +302,9 @@
           ],
           "tags": [
             {
-              "key": "engine_host",
+              "key": "host",
               "operator": "=~",
-              "value": "/^$dockerhost$/"
+              "value": "/^$host$/"
             }
           ]
         }
@@ -364,7 +363,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -422,9 +420,9 @@
           ],
           "tags": [
             {
-              "key": "engine_host",
+              "key": "host",
               "operator": "=~",
-              "value": "/^$dockerhost$/"
+              "value": "/^$host$/"
             }
           ]
         }
@@ -455,7 +453,6 @@
       "id": 54,
       "interval": "$interval",
       "links": [],
-      "options": {},
       "pageSize": null,
       "scroll": true,
       "showHeader": true,
@@ -466,12 +463,14 @@
       "styles": [
         {
           "alias": "Time",
+          "align": "auto",
           "dateFormat": "YYYY-MM-DD HH:mm:ss",
           "pattern": "Time",
           "type": "hidden"
         },
         {
           "alias": "",
+          "align": "auto",
           "colorMode": null,
           "colors": [
             "rgba(245, 54, 54, 0.9)",
@@ -511,9 +510,9 @@
           ],
           "tags": [
             {
-              "key": "engine_host",
+              "key": "host",
               "operator": "=~",
-              "value": "/^$dockerhost$/"
+              "value": "/^$host$/"
             }
           ]
         },
@@ -542,9 +541,9 @@
           ],
           "tags": [
             {
-              "key": "engine_host",
+              "key": "host",
               "operator": "=~",
-              "value": "/^$dockerhost$/"
+              "value": "/^$host$/"
             }
           ]
         },
@@ -573,9 +572,9 @@
           ],
           "tags": [
             {
-              "key": "engine_host",
+              "key": "host",
               "operator": "=~",
-              "value": "/^$dockerhost$/"
+              "value": "/^$host$/"
             }
           ]
         },
@@ -604,9 +603,9 @@
           ],
           "tags": [
             {
-              "key": "engine_host",
+              "key": "host",
               "operator": "=~",
-              "value": "/^$dockerhost$/"
+              "value": "/^$host$/"
             }
           ]
         }
@@ -695,9 +694,9 @@
           ],
           "tags": [
             {
-              "key": "engine_host",
+              "key": "host",
               "operator": "=~",
-              "value": "/^$dockerhost$/"
+              "value": "/^$host$/"
             }
           ]
         },
@@ -739,9 +738,9 @@
           ],
           "tags": [
             {
-              "key": "engine_host",
+              "key": "host",
               "operator": "=~",
-              "value": "/^$dockerhost$/"
+              "value": "/^$host$/"
             }
           ]
         },
@@ -783,9 +782,9 @@
           ],
           "tags": [
             {
-              "key": "engine_host",
+              "key": "host",
               "operator": "=~",
-              "value": "/^$dockerhost$/"
+              "value": "/^$host$/"
             }
           ]
         },
@@ -827,9 +826,9 @@
           ],
           "tags": [
             {
-              "key": "engine_host",
+              "key": "host",
               "operator": "=~",
-              "value": "/^$dockerhost$/"
+              "value": "/^$host$/"
             }
           ]
         }
@@ -918,7 +917,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "alias": "Recived",
+          "alias": "Received - $tag_network",
           "dsType": "influxdb",
           "groupBy": [
             {
@@ -926,6 +925,12 @@
                 "$interval"
               ],
               "type": "time"
+            },
+            {
+              "params": [
+                "network"
+              ],
+              "type": "tag"
             },
             {
               "params": [
@@ -955,14 +960,14 @@
           ],
           "tags": [
             {
-              "key": "engine_host",
+              "key": "host",
               "operator": "=~",
-              "value": "/^$dockerhost$/"
+              "value": "/^$host$/"
             }
           ]
         },
         {
-          "alias": "Transmited",
+          "alias": "Transmited - $tag_network",
           "dsType": "influxdb",
           "groupBy": [
             {
@@ -970,6 +975,12 @@
                 "$interval"
               ],
               "type": "time"
+            },
+            {
+              "params": [
+                "network"
+              ],
+              "type": "tag"
             },
             {
               "params": [
@@ -999,9 +1010,9 @@
           ],
           "tags": [
             {
-              "key": "engine_host",
+              "key": "host",
               "operator": "=~",
-              "value": "/^$dockerhost$/"
+              "value": "/^$host$/"
             }
           ]
         }
@@ -1013,7 +1024,7 @@
       "title": "Network",
       "tooltip": {
         "shared": true,
-        "sort": 0,
+        "sort": 2,
         "value_type": "individual"
       },
       "type": "graph",
@@ -1026,6 +1037,7 @@
       },
       "yaxes": [
         {
+          "$$hashKey": "object:10475",
           "format": "decbytes",
           "label": null,
           "logBase": 1,
@@ -1034,6 +1046,7 @@
           "show": true
         },
         {
+          "$$hashKey": "object:10476",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -1058,8 +1071,8 @@
       },
       "id": 56,
       "panels": [],
-      "repeat": "container",
-      "title": "Container - $container",
+      "repeat": null,
+      "title": "Containers",
       "type": "row"
     },
     {
@@ -1071,8 +1084,8 @@
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
-        "h": 7,
-        "w": 6,
+        "h": 8,
+        "w": 24,
         "x": 0,
         "y": 15
       },
@@ -1080,13 +1093,16 @@
       "id": 1,
       "interval": "$interval",
       "legend": {
-        "avg": false,
-        "current": false,
-        "max": false,
-        "min": false,
+        "alignAsTable": true,
+        "avg": true,
+        "current": true,
+        "max": true,
+        "min": true,
+        "rightSide": false,
         "show": true,
+        "sideWidth": null,
         "total": false,
-        "values": false
+        "values": true
       },
       "lines": true,
       "linewidth": 1,
@@ -1105,7 +1121,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "alias": "Usage [%]",
+          "alias": "$tag_container_name",
           "dsType": "influxdb",
           "groupBy": [
             {
@@ -1113,6 +1129,12 @@
                 "$interval"
               ],
               "type": "time"
+            },
+            {
+              "params": [
+                "container_name"
+              ],
+              "type": "tag"
             },
             {
               "params": [
@@ -1142,15 +1164,15 @@
           ],
           "tags": [
             {
-              "key": "container_name",
+              "key": "container_image",
               "operator": "=~",
               "value": "/^$container$/"
             },
             {
               "condition": "AND",
-              "key": "engine_host",
+              "key": "host",
               "operator": "=~",
-              "value": "/^$dockerhost$/"
+              "value": "/^$host$/"
             }
           ]
         }
@@ -1159,10 +1181,10 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "CPU",
+      "title": "CPU Usage",
       "tooltip": {
         "shared": true,
-        "sort": 0,
+        "sort": 2,
         "value_type": "individual"
       },
       "type": "graph",
@@ -1175,8 +1197,9 @@
       },
       "yaxes": [
         {
+          "$$hashKey": "object:7590",
           "decimals": null,
-          "format": "short",
+          "format": "percent",
           "label": null,
           "logBase": 1,
           "max": null,
@@ -1184,6 +1207,7 @@
           "show": true
         },
         {
+          "$$hashKey": "object:7591",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -1206,22 +1230,24 @@
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
-        "h": 7,
-        "w": 6,
-        "x": 6,
-        "y": 15
+        "h": 8,
+        "w": 24,
+        "x": 0,
+        "y": 23
       },
       "hiddenSeries": false,
       "id": 13,
       "interval": "$interval",
       "legend": {
-        "avg": false,
-        "current": false,
-        "max": false,
-        "min": false,
+        "alignAsTable": true,
+        "avg": true,
+        "current": true,
+        "max": true,
+        "min": true,
+        "rightSide": false,
         "show": true,
         "total": false,
-        "values": false
+        "values": true
       },
       "lines": true,
       "linewidth": 1,
@@ -1240,7 +1266,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "alias": "IO service recursive read",
+          "alias": "read - $container_name",
           "dsType": "influxdb",
           "groupBy": [
             {
@@ -1248,6 +1274,12 @@
                 "$interval"
               ],
               "type": "time"
+            },
+            {
+              "params": [
+                "container_name"
+              ],
+              "type": "tag"
             },
             {
               "params": [
@@ -1277,20 +1309,20 @@
           ],
           "tags": [
             {
-              "key": "container_name",
+              "key": "container_image",
               "operator": "=~",
               "value": "/^$container$/"
             },
             {
               "condition": "AND",
-              "key": "engine_host",
+              "key": "host",
               "operator": "=~",
-              "value": "/^$dockerhost$/"
+              "value": "/^$host$/"
             }
           ]
         },
         {
-          "alias": "IO service recursive write",
+          "alias": "write - $container_name",
           "dsType": "influxdb",
           "groupBy": [
             {
@@ -1298,6 +1330,12 @@
                 "$interval"
               ],
               "type": "time"
+            },
+            {
+              "params": [
+                "container_name"
+              ],
+              "type": "tag"
             },
             {
               "params": [
@@ -1327,15 +1365,15 @@
           ],
           "tags": [
             {
-              "key": "container_name",
+              "key": "container_image",
               "operator": "=~",
               "value": "/^$container$/"
             },
             {
               "condition": "AND",
-              "key": "engine_host",
+              "key": "host",
               "operator": "=~",
-              "value": "/^$dockerhost$/"
+              "value": "/^$host$/"
             }
           ]
         }
@@ -1344,10 +1382,10 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "IO",
+      "title": "IO Usage",
       "tooltip": {
         "shared": true,
-        "sort": 0,
+        "sort": 2,
         "value_type": "individual"
       },
       "type": "graph",
@@ -1360,6 +1398,7 @@
       },
       "yaxes": [
         {
+          "$$hashKey": "object:9222",
           "decimals": null,
           "format": "bytes",
           "label": null,
@@ -1369,6 +1408,7 @@
           "show": true
         },
         {
+          "$$hashKey": "object:9223",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -1391,22 +1431,24 @@
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
-        "h": 7,
-        "w": 6,
-        "x": 12,
-        "y": 15
+        "h": 8,
+        "w": 24,
+        "x": 0,
+        "y": 31
       },
       "hiddenSeries": false,
       "id": 14,
       "interval": "$interval",
       "legend": {
-        "avg": false,
-        "current": false,
-        "max": false,
-        "min": false,
+        "alignAsTable": true,
+        "avg": true,
+        "current": true,
+        "max": true,
+        "min": true,
+        "rightSide": false,
         "show": true,
         "total": false,
-        "values": false
+        "values": true
       },
       "lines": true,
       "linewidth": 1,
@@ -1425,7 +1467,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "alias": "Usage [%]",
+          "alias": "$tag_container_name",
           "dsType": "influxdb",
           "groupBy": [
             {
@@ -1433,6 +1475,12 @@
                 "$interval"
               ],
               "type": "time"
+            },
+            {
+              "params": [
+                "container_name"
+              ],
+              "type": "tag"
             },
             {
               "params": [
@@ -1462,15 +1510,15 @@
           ],
           "tags": [
             {
-              "key": "container_name",
+              "key": "container_image",
               "operator": "=~",
               "value": "/^$container$/"
             },
             {
               "condition": "AND",
-              "key": "engine_host",
+              "key": "host",
               "operator": "=~",
-              "value": "/^$dockerhost$/"
+              "value": "/^$host$/"
             }
           ]
         }
@@ -1479,10 +1527,10 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "Memory",
+      "title": "Memory Usage",
       "tooltip": {
         "shared": true,
-        "sort": 0,
+        "sort": 2,
         "value_type": "individual"
       },
       "type": "graph",
@@ -1495,6 +1543,7 @@
       },
       "yaxes": [
         {
+          "$$hashKey": "object:7902",
           "decimals": null,
           "format": "percent",
           "label": null,
@@ -1504,6 +1553,7 @@
           "show": true
         },
         {
+          "$$hashKey": "object:7903",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -1526,22 +1576,24 @@
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
-        "h": 7,
-        "w": 6,
-        "x": 18,
-        "y": 15
+        "h": 9,
+        "w": 24,
+        "x": 0,
+        "y": 39
       },
       "hiddenSeries": false,
       "id": 85,
       "interval": "$interval",
       "legend": {
-        "avg": false,
-        "current": false,
-        "max": false,
-        "min": false,
+        "alignAsTable": true,
+        "avg": true,
+        "current": true,
+        "max": true,
+        "min": true,
+        "rightSide": false,
         "show": true,
         "total": false,
-        "values": false
+        "values": true
       },
       "lines": true,
       "linewidth": 1,
@@ -1560,7 +1612,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "alias": "Recived",
+          "alias": "Received - $tag_container_name",
           "dsType": "influxdb",
           "groupBy": [
             {
@@ -1568,6 +1620,12 @@
                 "$interval"
               ],
               "type": "time"
+            },
+            {
+              "params": [
+                "container_name"
+              ],
+              "type": "tag"
             },
             {
               "params": [
@@ -1597,20 +1655,20 @@
           ],
           "tags": [
             {
-              "key": "container_name",
+              "key": "container_image",
               "operator": "=~",
               "value": "/^$container$/"
             },
             {
               "condition": "AND",
-              "key": "engine_host",
+              "key": "host",
               "operator": "=~",
-              "value": "/^$dockerhost$/"
+              "value": "/^$host$/"
             }
           ]
         },
         {
-          "alias": "Transmited",
+          "alias": "Transmited - $tag_container_name",
           "dsType": "influxdb",
           "groupBy": [
             {
@@ -1618,6 +1676,12 @@
                 "$interval"
               ],
               "type": "time"
+            },
+            {
+              "params": [
+                "container_name"
+              ],
+              "type": "tag"
             },
             {
               "params": [
@@ -1647,15 +1711,15 @@
           ],
           "tags": [
             {
-              "key": "container_name",
+              "key": "container_image",
               "operator": "=~",
               "value": "/^$container$/"
             },
             {
               "condition": "AND",
-              "key": "engine_host",
+              "key": "host",
               "operator": "=~",
-              "value": "/^$dockerhost$/"
+              "value": "/^$host$/"
             }
           ]
         }
@@ -1667,7 +1731,7 @@
       "title": "Network",
       "tooltip": {
         "shared": true,
-        "sort": 0,
+        "sort": 2,
         "value_type": "individual"
       },
       "type": "graph",
@@ -1680,6 +1744,7 @@
       },
       "yaxes": [
         {
+          "$$hashKey": "object:8342",
           "decimals": null,
           "format": "decbytes",
           "label": null,
@@ -1689,6 +1754,7 @@
           "show": true
         },
         {
+          "$$hashKey": "object:8343",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -1703,7 +1769,7 @@
       }
     }
   ],
-  "schemaVersion": 21,
+  "schemaVersion": 22,
   "style": "dark",
   "tags": [
     "docker",
@@ -1814,14 +1880,15 @@
         "allValue": null,
         "current": {},
         "datasource": "${DS_INFLUXDB}",
-        "definition": "",
+        "definition": "show tag values from docker_container_cpu with key=\"host\"",
         "hide": 0,
-        "includeAll": true,
-        "label": "container",
+        "includeAll": false,
+        "index": -1,
+        "label": "host",
         "multi": false,
-        "name": "container",
+        "name": "host",
         "options": [],
-        "query": "show tag values from docker_container_cpu with key=\"container_name\"",
+        "query": "show tag values from docker_container_cpu with key=\"host\"",
         "refresh": 1,
         "regex": "",
         "skipUrlSync": false,
@@ -1836,18 +1903,19 @@
         "allValue": null,
         "current": {},
         "datasource": "${DS_INFLUXDB}",
-        "definition": "",
+        "definition": "SHOW TAG VALUES FROM docker_container_cpu WITH KEY = \"container_image\" WHERE \"host\" =~ /$host/",
         "hide": 0,
         "includeAll": true,
-        "label": "docker host",
-        "multi": false,
-        "name": "dockerhost",
+        "index": -1,
+        "label": "container",
+        "multi": true,
+        "name": "container",
         "options": [],
-        "query": "show tag values from docker with key=\"engine_host\"",
+        "query": "SHOW TAG VALUES FROM docker_container_cpu WITH KEY = \"container_image\" WHERE \"host\" =~ /$host/",
         "refresh": 1,
         "regex": "",
         "skipUrlSync": false,
-        "sort": 0,
+        "sort": 1,
         "tagValuesQuery": "",
         "tags": [],
         "tagsQuery": "",
@@ -1888,5 +1956,8 @@
   "timezone": "",
   "title": "Docker",
   "uid": "jPqOU7Mmk",
-  "version": 9
+  "variables": {
+    "list": []
+  },
+  "version": 10
 }

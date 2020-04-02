@@ -20,7 +20,7 @@
       "type": "grafana",
       "id": "grafana",
       "name": "Grafana",
-      "version": "6.6.1"
+      "version": "6.7.1"
     },
     {
       "type": "panel",
@@ -38,6 +38,7 @@
   "annotations": {
     "list": [
       {
+        "$$hashKey": "object:2659",
         "builtIn": 1,
         "datasource": "-- Grafana --",
         "enable": true,
@@ -50,7 +51,7 @@
   },
   "description": "by MateusSouzaWeb",
   "editable": true,
-  "gnetId": null,
+  "gnetId": 11873,
   "graphTooltip": 0,
   "id": null,
   "links": [
@@ -78,7 +79,6 @@
       "limit": "20",
       "nameFilter": "",
       "onlyAlertsOnDashboard": true,
-      "options": {},
       "show": "current",
       "sortOrder": 1,
       "stateFilter": [
@@ -107,7 +107,6 @@
       "limit": "20",
       "nameFilter": "",
       "onlyAlertsOnDashboard": true,
-      "options": {},
       "show": "current",
       "sortOrder": 1,
       "stateFilter": [
@@ -1930,5 +1929,8 @@
   "timezone": "",
   "title": "System Alerts",
   "uid": "6KEuKX_Wz",
-  "version": 18
+  "variables": {
+    "list": []
+  },
+  "version": 1
 }

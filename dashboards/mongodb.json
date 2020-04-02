@@ -14,7 +14,7 @@
       "type": "grafana",
       "id": "grafana",
       "name": "Grafana",
-      "version": "6.6.1"
+      "version": "6.7.1"
     },
     {
       "type": "panel",
@@ -38,6 +38,7 @@
   "annotations": {
     "list": [
       {
+        "$$hashKey": "object:9327",
         "builtIn": 1,
         "datasource": "-- Grafana --",
         "enable": true,
@@ -53,7 +54,7 @@
   "gnetId": 11500,
   "graphTooltip": 0,
   "id": null,
-  "iteration": 1583519016402,
+  "iteration": 1585861906255,
   "links": [
     {
       "icon": "external link",
@@ -105,7 +106,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -224,7 +224,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -1716,15 +1715,15 @@
         "auto_min": "10s",
         "current": {
           "selected": false,
-          "text": "10s",
-          "value": "10s"
+          "text": "auto",
+          "value": "$__auto_interval_interval"
         },
         "hide": 0,
         "label": "interval",
         "name": "interval",
         "options": [
           {
-            "selected": false,
+            "selected": true,
             "text": "auto",
             "value": "$__auto_interval_interval"
           },
@@ -1739,7 +1738,7 @@
             "value": "5s"
           },
           {
-            "selected": true,
+            "selected": false,
             "text": "10s",
             "value": "10s"
           },
@@ -1815,7 +1814,8 @@
         "datasource": "${DS_INFLUXDB}",
         "definition": "",
         "hide": 0,
-        "includeAll": true,
+        "includeAll": false,
+        "index": -1,
         "label": "host",
         "multi": false,
         "name": "host",
@@ -1865,5 +1865,8 @@
   "timezone": "",
   "title": "MongoDB",
   "uid": "fplVMPLZz",
-  "version": 3
+  "variables": {
+    "list": []
+  },
+  "version": 2
 }

@@ -14,7 +14,7 @@
       "type": "grafana",
       "id": "grafana",
       "name": "Grafana",
-      "version": "6.6.1"
+      "version": "6.7.1"
     },
     {
       "type": "panel",
@@ -33,17 +33,12 @@
       "id": "singlestat",
       "name": "Singlestat",
       "version": ""
-    },
-    {
-      "type": "panel",
-      "id": "table",
-      "name": "Table",
-      "version": ""
     }
   ],
   "annotations": {
     "list": [
       {
+        "$$hashKey": "object:198",
         "builtIn": 1,
         "datasource": "-- Grafana --",
         "enable": true,
@@ -59,7 +54,7 @@
   "gnetId": 11498,
   "graphTooltip": 0,
   "id": null,
-  "iteration": 1583519034886,
+  "iteration": 1585861957233,
   "links": [
     {
       "icon": "external link",
@@ -112,7 +107,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -156,7 +150,7 @@
             [
               {
                 "params": [
-                  "bytes_sent"
+                  "request"
                 ],
                 "type": "field"
               },
@@ -174,7 +168,7 @@
             },
             {
               "condition": "AND",
-              "key": "status",
+              "key": "resp_code",
               "operator": "=~",
               "value": "/^*/"
             }
@@ -236,7 +230,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -282,7 +275,7 @@
             [
               {
                 "params": [
-                  "bytes_sent"
+                  "request"
                 ],
                 "type": "field"
               },
@@ -300,7 +293,7 @@
             },
             {
               "condition": "AND",
-              "key": "status",
+              "key": "resp_code",
               "operator": "=",
               "value": "200"
             }
@@ -363,7 +356,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -407,7 +399,7 @@
             [
               {
                 "params": [
-                  "bytes_sent"
+                  "request"
                 ],
                 "type": "field"
               },
@@ -425,7 +417,7 @@
             },
             {
               "condition": "AND",
-              "key": "status",
+              "key": "resp_code",
               "operator": "=",
               "value": "301"
             }
@@ -486,7 +478,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -530,7 +521,7 @@
             [
               {
                 "params": [
-                  "bytes_sent"
+                  "request"
                 ],
                 "type": "field"
               },
@@ -548,7 +539,7 @@
             },
             {
               "condition": "AND",
-              "key": "status",
+              "key": "resp_code",
               "operator": "=",
               "value": "302"
             }
@@ -609,7 +600,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -653,7 +643,7 @@
             [
               {
                 "params": [
-                  "bytes_sent"
+                  "request"
                 ],
                 "type": "field"
               },
@@ -671,7 +661,7 @@
             },
             {
               "condition": "AND",
-              "key": "status",
+              "key": "resp_code",
               "operator": "=",
               "value": "304"
             }
@@ -732,7 +722,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -776,7 +765,7 @@
             [
               {
                 "params": [
-                  "bytes_sent"
+                  "request"
                 ],
                 "type": "field"
               },
@@ -794,7 +783,7 @@
             },
             {
               "condition": "AND",
-              "key": "status",
+              "key": "resp_code",
               "operator": "=",
               "value": "500"
             }
@@ -855,7 +844,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -899,7 +887,7 @@
             [
               {
                 "params": [
-                  "bytes_sent"
+                  "request"
                 ],
                 "type": "field"
               },
@@ -917,7 +905,7 @@
             },
             {
               "condition": "AND",
-              "key": "status",
+              "key": "resp_code",
               "operator": "=",
               "value": "400"
             }
@@ -978,7 +966,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -1022,7 +1009,7 @@
             [
               {
                 "params": [
-                  "bytes_sent"
+                  "request"
                 ],
                 "type": "field"
               },
@@ -1040,7 +1027,7 @@
             },
             {
               "condition": "AND",
-              "key": "status",
+              "key": "resp_code",
               "operator": "=",
               "value": "401"
             }
@@ -1101,7 +1088,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -1145,7 +1131,7 @@
             [
               {
                 "params": [
-                  "bytes_sent"
+                  "request"
                 ],
                 "type": "field"
               },
@@ -1163,7 +1149,7 @@
             },
             {
               "condition": "AND",
-              "key": "status",
+              "key": "resp_code",
               "operator": "=",
               "value": "403"
             }
@@ -1224,7 +1210,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -1268,7 +1253,7 @@
             [
               {
                 "params": [
-                  "bytes_sent"
+                  "request"
                 ],
                 "type": "field"
               },
@@ -1286,7 +1271,7 @@
             },
             {
               "condition": "AND",
-              "key": "status",
+              "key": "resp_code",
               "operator": "=",
               "value": "404"
             }
@@ -1347,7 +1332,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -1391,7 +1375,7 @@
             [
               {
                 "params": [
-                  "bytes_sent"
+                  "request"
                 ],
                 "type": "field"
               },
@@ -1409,7 +1393,7 @@
             },
             {
               "condition": "AND",
-              "key": "status",
+              "key": "resp_code",
               "operator": "=",
               "value": "405"
             }
@@ -1470,7 +1454,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -1514,7 +1497,7 @@
             [
               {
                 "params": [
-                  "bytes_sent"
+                  "request"
                 ],
                 "type": "field"
               },
@@ -1532,7 +1515,7 @@
             },
             {
               "condition": "AND",
-              "key": "status",
+              "key": "resp_code",
               "operator": "=",
               "value": "502"
             }
@@ -1564,7 +1547,7 @@
       "fillGradient": 0,
       "grid": {},
       "gridPos": {
-        "h": 8,
+        "h": 6,
         "w": 24,
         "x": 0,
         "y": 6
@@ -1577,16 +1560,14 @@
         "alignAsTable": true,
         "avg": true,
         "current": true,
-        "hideEmpty": true,
-        "hideZero": true,
         "max": true,
-        "min": true,
+        "min": false,
         "rightSide": true,
         "show": true,
-        "sideWidth": 360,
+        "sideWidth": 280,
         "sort": "current",
         "sortDesc": true,
-        "total": true,
+        "total": false,
         "values": true
       },
       "lines": true,
@@ -1606,7 +1587,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "alias": "$col",
+          "alias": "",
           "dsType": "influxdb",
           "groupBy": [
             {
@@ -1641,7 +1622,7 @@
               },
               {
                 "params": [
-                  "1s"
+                  "10s"
                 ],
                 "type": "non_negative_derivative"
               },
@@ -1665,7 +1646,7 @@
               },
               {
                 "params": [
-                  "1s"
+                  "10s"
                 ],
                 "type": "non_negative_derivative"
               },
@@ -1689,7 +1670,7 @@
               },
               {
                 "params": [
-                  "1s"
+                  "10s"
                 ],
                 "type": "non_negative_derivative"
               },
@@ -1713,7 +1694,7 @@
               },
               {
                 "params": [
-                  "1s"
+                  "10s"
                 ],
                 "type": "non_negative_derivative"
               },
@@ -1737,7 +1718,7 @@
               },
               {
                 "params": [
-                  "1s"
+                  "10s"
                 ],
                 "type": "non_negative_derivative"
               },
@@ -1761,7 +1742,7 @@
               },
               {
                 "params": [
-                  "1s"
+                  "10s"
                 ],
                 "type": "non_negative_derivative"
               },
@@ -1785,7 +1766,7 @@
               },
               {
                 "params": [
-                  "1s"
+                  "10s"
                 ],
                 "type": "non_negative_derivative"
               },
@@ -1857,10 +1838,10 @@
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
-        "h": 8,
+        "h": 6,
         "w": 24,
         "x": 0,
-        "y": 14
+        "y": 12
       },
       "hiddenSeries": false,
       "hideTimeOverride": false,
@@ -1868,19 +1849,15 @@
       "interval": "$interval",
       "legend": {
         "alignAsTable": true,
-        "avg": true,
-        "current": true,
-        "hideEmpty": true,
-        "hideZero": true,
-        "max": true,
-        "min": true,
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
         "rightSide": true,
         "show": true,
-        "sideWidth": 360,
-        "sort": "total",
-        "sortDesc": true,
-        "total": true,
-        "values": true
+        "sideWidth": 280,
+        "total": false,
+        "values": false
       },
       "lines": true,
       "linewidth": 1,
@@ -1899,19 +1876,13 @@
       "steppedLine": false,
       "targets": [
         {
-          "alias": "$tag_status",
+          "alias": "HTTP 200",
           "groupBy": [
             {
               "params": [
                 "$interval"
               ],
               "type": "time"
-            },
-            {
-              "params": [
-                "status"
-              ],
-              "type": "tag"
             },
             {
               "params": [
@@ -1932,7 +1903,7 @@
             [
               {
                 "params": [
-                  "bytes_sent"
+                  "request"
                 ],
                 "type": "field"
               },
@@ -1947,6 +1918,318 @@
               "key": "host",
               "operator": "=~",
               "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "response_code",
+              "operator": "=",
+              "value": "200"
+            }
+          ]
+        },
+        {
+          "alias": "HTTP 400",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "nginx_access_log",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "query": "SELECT count(\"request\") FROM \"nginx_access_log\" WHERE (\"host\" =~ /^$host$/ AND \"resp_code\" = '400') AND $timeFilter GROUP BY time($interval) fill(null)",
+          "rawQuery": false,
+          "refId": "B",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "request"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "count"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "resp_code",
+              "operator": "=",
+              "value": "400"
+            }
+          ]
+        },
+        {
+          "alias": "HTTP 401",
+          "groupBy": [
+            {
+              "params": [
+                "$interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "nginx_access_log",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "query": "SELECT count(\"request\") FROM \"nginx_access_log\" WHERE (\"host\" =~ /^$host$/ AND \"resp_code\" = '401') AND $timeFilter GROUP BY time($__interval) fill(null)",
+          "rawQuery": false,
+          "refId": "G",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "request"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "count"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "resp_code",
+              "operator": "=",
+              "value": "401"
+            }
+          ]
+        },
+        {
+          "alias": "HTTP 403",
+          "groupBy": [
+            {
+              "params": [
+                "$interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "nginx_access_log",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "query": "SELECT count(\"request\") FROM \"nginx_access_log\" WHERE (\"host\" =~ /^$host$/ AND \"resp_code\" = '400') AND $timeFilter GROUP BY time($interval) fill(null)",
+          "rawQuery": false,
+          "refId": "C",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "request"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "count"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "resp_code",
+              "operator": "=",
+              "value": "403"
+            }
+          ]
+        },
+        {
+          "alias": "HTTP 404",
+          "groupBy": [
+            {
+              "params": [
+                "$interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "nginx_access_log",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "query": "SELECT count(\"request\") FROM \"nginx_access_log\" WHERE (\"host\" =~ /^$host$/ AND \"resp_code\" = '400') AND $timeFilter GROUP BY time($interval) fill(null)",
+          "rawQuery": false,
+          "refId": "D",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "request"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "count"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "resp_code",
+              "operator": "=",
+              "value": "404"
+            }
+          ]
+        },
+        {
+          "alias": "HTTP 500",
+          "groupBy": [
+            {
+              "params": [
+                "$interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "nginx_access_log",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "query": "SELECT count(\"request\") FROM \"nginx_access_log\" WHERE (\"host\" =~ /^$host$/ AND \"resp_code\" = '400') AND $timeFilter GROUP BY time($interval) fill(null)",
+          "rawQuery": false,
+          "refId": "E",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "request"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "count"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "resp_code",
+              "operator": "=",
+              "value": "500"
+            }
+          ]
+        },
+        {
+          "alias": "HTTP 502",
+          "groupBy": [
+            {
+              "params": [
+                "$interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "nginx_access_log",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "query": "SELECT count(\"request\") FROM \"nginx_access_log\" WHERE (\"host\" =~ /^$host$/ AND \"resp_code\" = '400') AND $timeFilter GROUP BY time($interval) fill(null)",
+          "rawQuery": false,
+          "refId": "F",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "request"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "count"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "resp_code",
+              "operator": "=",
+              "value": "502"
             }
           ]
         }
@@ -2002,10 +2285,10 @@
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
-        "h": 8,
+        "h": 6,
         "w": 24,
         "x": 0,
-        "y": 22
+        "y": 18
       },
       "hiddenSeries": false,
       "id": 72,
@@ -2013,14 +2296,14 @@
       "legend": {
         "alignAsTable": true,
         "avg": true,
-        "current": true,
+        "current": false,
         "hideEmpty": true,
         "hideZero": true,
-        "max": true,
-        "min": true,
+        "max": false,
+        "min": false,
         "rightSide": true,
         "show": true,
-        "sideWidth": 360,
+        "sideWidth": 280,
         "sort": "total",
         "sortDesc": true,
         "total": true,
@@ -2043,7 +2326,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "alias": "$tag_request_method - $tag_status",
+          "alias": "$tag_verb",
           "groupBy": [
             {
               "params": [
@@ -2053,13 +2336,7 @@
             },
             {
               "params": [
-                "request_method"
-              ],
-              "type": "tag"
-            },
-            {
-              "params": [
-                "status"
+                "verb"
               ],
               "type": "tag"
             }
@@ -2075,7 +2352,7 @@
             [
               {
                 "params": [
-                  "bytes_sent"
+                  "request"
                 ],
                 "type": "field"
               },
@@ -2146,10 +2423,10 @@
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
-        "h": 8,
+        "h": 6,
         "w": 24,
         "x": 0,
-        "y": 30
+        "y": 24
       },
       "hiddenSeries": false,
       "id": 74,
@@ -2160,14 +2437,14 @@
         "current": true,
         "hideEmpty": true,
         "hideZero": true,
-        "max": true,
-        "min": true,
+        "max": false,
+        "min": false,
         "rightSide": true,
         "show": true,
-        "sideWidth": 360,
+        "sideWidth": 280,
         "sort": "total",
         "sortDesc": true,
-        "total": false,
+        "total": true,
         "values": true
       },
       "lines": true,
@@ -2187,7 +2464,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "alias": "1xx",
+          "alias": "HTTP 1xx",
           "groupBy": [
             {
               "params": [
@@ -2207,7 +2484,7 @@
             [
               {
                 "params": [
-                  "bytes_sent"
+                  "resp_bytes"
                 ],
                 "type": "field"
               },
@@ -2226,14 +2503,14 @@
             },
             {
               "condition": "AND",
-              "key": "status",
+              "key": "resp_code",
               "operator": "=~",
               "value": "/^1/"
             }
           ]
         },
         {
-          "alias": "2xx",
+          "alias": "HTTP  2xx",
           "groupBy": [
             {
               "params": [
@@ -2253,7 +2530,7 @@
             [
               {
                 "params": [
-                  "bytes_sent"
+                  "resp_bytes"
                 ],
                 "type": "field"
               },
@@ -2272,14 +2549,14 @@
             },
             {
               "condition": "AND",
-              "key": "status",
+              "key": "resp_code",
               "operator": "=~",
               "value": "/^2/"
             }
           ]
         },
         {
-          "alias": "3xx",
+          "alias": "HTTP  3xx",
           "groupBy": [
             {
               "params": [
@@ -2299,7 +2576,7 @@
             [
               {
                 "params": [
-                  "bytes_sent"
+                  "resp_bytes"
                 ],
                 "type": "field"
               },
@@ -2318,14 +2595,14 @@
             },
             {
               "condition": "AND",
-              "key": "status",
+              "key": "resp_code",
               "operator": "=~",
               "value": "/^3/"
             }
           ]
         },
         {
-          "alias": "4xx",
+          "alias": "HTTP  4xx",
           "groupBy": [
             {
               "params": [
@@ -2345,7 +2622,7 @@
             [
               {
                 "params": [
-                  "bytes_sent"
+                  "resp_bytes"
                 ],
                 "type": "field"
               },
@@ -2364,14 +2641,14 @@
             },
             {
               "condition": "AND",
-              "key": "status",
+              "key": "resp_code",
               "operator": "=~",
               "value": "/^4/"
             }
           ]
         },
         {
-          "alias": "5xx",
+          "alias": "HTTP  5xx",
           "groupBy": [
             {
               "params": [
@@ -2391,7 +2668,7 @@
             [
               {
                 "params": [
-                  "bytes_sent"
+                  "resp_bytes"
                 ],
                 "type": "field"
               },
@@ -2410,7 +2687,7 @@
             },
             {
               "condition": "AND",
-              "key": "status",
+              "key": "resp_code",
               "operator": "=~",
               "value": "/^5/"
             }
@@ -2467,29 +2744,28 @@
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
-        "h": 8,
+        "h": 6,
         "w": 24,
         "x": 0,
-        "y": 38
+        "y": 30
       },
       "hiddenSeries": false,
       "id": 68,
       "interval": "$interval",
       "legend": {
         "alignAsTable": true,
-        "avg": true,
-        "current": true,
+        "avg": false,
+        "current": false,
         "hideEmpty": false,
         "hideZero": false,
-        "max": true,
-        "min": true,
+        "max": false,
+        "min": false,
         "rightSide": true,
         "show": true,
-        "sideWidth": 360,
-        "sort": "max",
+        "sideWidth": 280,
         "sortDesc": true,
         "total": false,
-        "values": true
+        "values": false
       },
       "lines": true,
       "linewidth": 1,
@@ -2508,57 +2784,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "alias": "1XX",
-          "groupBy": [
-            {
-              "params": [
-                "$__interval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "null"
-              ],
-              "type": "fill"
-            }
-          ],
-          "hide": false,
-          "measurement": "nginx_access_log",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "refId": "E",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "request_time"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "first"
-              }
-            ]
-          ],
-          "tags": [
-            {
-              "key": "host",
-              "operator": "=~",
-              "value": "/^$host$/"
-            },
-            {
-              "condition": "AND",
-              "key": "status",
-              "operator": "=~",
-              "value": "/^1/"
-            }
-          ]
-        },
-        {
-          "alias": "2XX",
+          "alias": "Request time 2**",
           "groupBy": [
             {
               "params": [
@@ -2601,14 +2827,14 @@
             },
             {
               "condition": "AND",
-              "key": "status",
+              "key": "resp_code",
               "operator": "=~",
               "value": "/^2/"
             }
           ]
         },
         {
-          "alias": "3XX",
+          "alias": "Request time 3**",
           "groupBy": [
             {
               "params": [
@@ -2653,14 +2879,14 @@
             },
             {
               "condition": "AND",
-              "key": "status",
+              "key": "resp_code",
               "operator": "=~",
               "value": "/^3/"
             }
           ]
         },
         {
-          "alias": "4XX",
+          "alias": "Request time 4**",
           "groupBy": [
             {
               "params": [
@@ -2705,14 +2931,14 @@
             },
             {
               "condition": "AND",
-              "key": "status",
+              "key": "resp_code",
               "operator": "=~",
               "value": "/^4/"
             }
           ]
         },
         {
-          "alias": "5XX",
+          "alias": "Request time 5**",
           "groupBy": [
             {
               "params": [
@@ -2757,7 +2983,7 @@
             },
             {
               "condition": "AND",
-              "key": "status",
+              "key": "resp_code",
               "operator": "=~",
               "value": "/^5/"
             }
@@ -2806,360 +3032,89 @@
       }
     },
     {
-      "columns": [],
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
       "datasource": "${DS_INFLUXDB}",
-      "fontSize": "100%",
+      "fill": 1,
+      "fillGradient": 0,
       "gridPos": {
-        "h": 21,
+        "h": 7,
         "w": 24,
         "x": 0,
-        "y": 46
+        "y": 36
       },
-      "id": 38,
-      "interval": "",
+      "hiddenSeries": false,
+      "id": 32,
+      "interval": "$interval",
+      "legend": {
+        "alignAsTable": true,
+        "avg": true,
+        "current": true,
+        "hideEmpty": true,
+        "hideZero": true,
+        "max": false,
+        "min": false,
+        "rightSide": true,
+        "show": true,
+        "total": true,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
       "links": [],
-      "options": {},
-      "pageSize": 50,
-      "scroll": true,
-      "showHeader": true,
-      "sort": {
-        "col": 4,
-        "desc": true
+      "nullPointMode": "null",
+      "options": {
+        "dataLinks": []
       },
-      "styles": [
-        {
-          "alias": "time",
-          "align": "auto",
-          "dateFormat": "YYYY-MM-DD HH:mm:ss",
-          "link": false,
-          "pattern": "Time",
-          "type": "date"
-        },
-        {
-          "alias": "",
-          "align": "auto",
-          "colorMode": null,
-          "colors": [
-            "rgba(245, 54, 54, 0.9)",
-            "rgba(237, 129, 40, 0.89)",
-            "rgba(50, 172, 45, 0.97)"
-          ],
-          "dateFormat": "YYYY-MM-DD HH:mm:ss",
-          "decimals": 2,
-          "link": false,
-          "mappingType": 1,
-          "pattern": "host",
-          "preserveFormat": false,
-          "sanitize": false,
-          "thresholds": [],
-          "type": "string",
-          "unit": "short",
-          "valueMaps": []
-        },
-        {
-          "alias": "",
-          "align": "auto",
-          "colorMode": null,
-          "colors": [
-            "rgba(245, 54, 54, 0.9)",
-            "rgba(237, 129, 40, 0.89)",
-            "rgba(50, 172, 45, 0.97)"
-          ],
-          "dateFormat": "YYYY-MM-DD HH:mm:ss",
-          "decimals": 2,
-          "link": true,
-          "linkTargetBlank": true,
-          "linkTooltip": "Visit Referrer",
-          "linkUrl": "${__cell:raw}",
-          "mappingType": 1,
-          "pattern": "referrer",
-          "sanitize": false,
-          "thresholds": [],
-          "type": "string",
-          "unit": "short",
-          "valueMaps": []
-        },
-        {
-          "alias": "",
-          "align": "auto",
-          "colorMode": null,
-          "colors": [
-            "rgba(245, 54, 54, 0.9)",
-            "rgba(237, 129, 40, 0.89)",
-            "rgba(50, 172, 45, 0.97)"
-          ],
-          "dateFormat": "YYYY-MM-DD HH:mm:ss",
-          "decimals": 2,
-          "mappingType": 1,
-          "pattern": "request_time",
-          "thresholds": [],
-          "type": "number",
-          "unit": "s"
-        },
-        {
-          "alias": "",
-          "align": "auto",
-          "colorMode": null,
-          "colors": [
-            "rgba(245, 54, 54, 0.9)",
-            "rgba(237, 129, 40, 0.89)",
-            "rgba(50, 172, 45, 0.97)"
-          ],
-          "dateFormat": "YYYY-MM-DD HH:mm:ss",
-          "decimals": 2,
-          "mappingType": 1,
-          "pattern": "upstream_time",
-          "thresholds": [],
-          "type": "number",
-          "unit": "s"
-        },
-        {
-          "alias": "",
-          "align": "auto",
-          "colorMode": null,
-          "colors": [
-            "rgba(245, 54, 54, 0.9)",
-            "rgba(237, 129, 40, 0.89)",
-            "rgba(50, 172, 45, 0.97)"
-          ],
-          "dateFormat": "YYYY-MM-DD HH:mm:ss",
-          "decimals": null,
-          "mappingType": 1,
-          "pattern": "bytes_sent",
-          "thresholds": [],
-          "type": "number",
-          "unit": "bytes"
-        },
-        {
-          "alias": "",
-          "align": "auto",
-          "colorMode": null,
-          "colors": [
-            "rgba(245, 54, 54, 0.9)",
-            "rgba(237, 129, 40, 0.89)",
-            "rgba(50, 172, 45, 0.97)"
-          ],
-          "dateFormat": "YYYY-MM-DD HH:mm:ss",
-          "decimals": 2,
-          "mappingType": 1,
-          "pattern": "client_ip",
-          "thresholds": [],
-          "type": "string",
-          "unit": "short"
-        },
-        {
-          "alias": "",
-          "align": "auto",
-          "colorMode": null,
-          "colors": [
-            "rgba(245, 54, 54, 0.9)",
-            "rgba(237, 129, 40, 0.89)",
-            "rgba(50, 172, 45, 0.97)"
-          ],
-          "dateFormat": "YYYY-MM-DD HH:mm:ss",
-          "decimals": 2,
-          "mappingType": 1,
-          "pattern": "user_agent",
-          "thresholds": [],
-          "type": "string",
-          "unit": "short"
-        },
-        {
-          "alias": "",
-          "align": "auto",
-          "colorMode": null,
-          "colors": [
-            "rgba(245, 54, 54, 0.9)",
-            "rgba(237, 129, 40, 0.89)",
-            "rgba(50, 172, 45, 0.97)"
-          ],
-          "dateFormat": "YYYY-MM-DD HH:mm:ss",
-          "decimals": 2,
-          "link": false,
-          "mappingType": 1,
-          "pattern": "body_bytes_sent",
-          "thresholds": [],
-          "type": "number",
-          "unit": "bytes"
-        },
-        {
-          "alias": "",
-          "align": "auto",
-          "colorMode": null,
-          "colors": [
-            "rgba(245, 54, 54, 0.9)",
-            "rgba(237, 129, 40, 0.89)",
-            "rgba(50, 172, 45, 0.97)"
-          ],
-          "dateFormat": "YYYY-MM-DD HH:mm:ss",
-          "decimals": 2,
-          "link": true,
-          "linkTargetBlank": true,
-          "linkTooltip": "Visit link",
-          "linkUrl": "https://${__cell_1:raw}${__cell:raw}",
-          "mappingType": 1,
-          "pattern": "uri",
-          "preserveFormat": false,
-          "sanitize": false,
-          "thresholds": [],
-          "type": "string",
-          "unit": "short",
-          "valueMaps": []
-        }
-      ],
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
       "targets": [
         {
-          "alias": "$col",
-          "groupBy": [],
+          "alias": "$tag_verb",
+          "groupBy": [
+            {
+              "params": [
+                "$interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "verb"
+              ],
+              "type": "tag"
+            }
+          ],
           "measurement": "nginx_access_log",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT first(\"request_host\") AS \"host\", first(\"request_uri\") AS \"uri\", first(\"http_referer\") AS \"referrer\", first(\"request_time\") AS \"request_time\", first(\"upstream_response_time\") AS \"upstream_time\", first(\"bytes_sent\") AS \"bytes_sent\", first(\"http_x_forwarded_for\") AS \"client_ip\", first(\"http_user_agent\") AS \"user_agent\" FROM \"nginx_access_log\" WHERE (\"host\" =~ /^$host$/) AND $timeFilter GROUP BY time($interval) fill(null)",
+          "query": "SELECT mean(\"resp_bytes\") FROM \"nginx_access_log\" WHERE (\"host\" =~ /^$host$/) AND $timeFilter GROUP BY time($__interval), \"host\", \"resp_code\" fill(null) SLIMIT 10",
           "rawQuery": false,
           "refId": "A",
-          "resultFormat": "table",
+          "resultFormat": "time_series",
           "select": [
             [
               {
                 "params": [
-                  "request_host"
+                  "request"
                 ],
                 "type": "field"
               },
               {
-                "params": [
-                  "host"
-                ],
-                "type": "alias"
-              }
-            ],
-            [
-              {
-                "params": [
-                  "request_uri"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [
-                  "uri"
-                ],
-                "type": "alias"
-              }
-            ],
-            [
-              {
-                "params": [
-                  "http_referer"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [
-                  "referrer"
-                ],
-                "type": "alias"
-              }
-            ],
-            [
-              {
-                "params": [
-                  "request_time"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [
-                  "request_time"
-                ],
-                "type": "alias"
-              }
-            ],
-            [
-              {
-                "params": [
-                  "upstream_response_time"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [
-                  "upstream_time"
-                ],
-                "type": "alias"
-              }
-            ],
-            [
-              {
-                "params": [
-                  "remote_addr"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [
-                  "client_ip"
-                ],
-                "type": "alias"
-              }
-            ],
-            [
-              {
-                "params": [
-                  "http_user_agent"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [
-                  "user_agent"
-                ],
-                "type": "alias"
-              }
-            ],
-            [
-              {
-                "params": [
-                  "bytes_sent"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [
-                  "bytes_sent"
-                ],
-                "type": "alias"
-              }
-            ],
-            [
-              {
-                "params": [
-                  "body_bytes_sent"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [
-                  "body_bytes_sent"
-                ],
-                "type": "alias"
-              }
-            ],
-            [
-              {
-                "params": [
-                  "server_protocol"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [
-                  "server_protocol"
-                ],
-                "type": "alias"
+                "params": [],
+                "type": "count"
               }
             ]
           ],
+          "slimit": "",
           "tags": [
             {
               "key": "host",
@@ -3169,12 +3124,49 @@
           ]
         }
       ],
-      "title": "Access Logs",
-      "transform": "table",
-      "type": "table"
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Queries",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "none",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
     }
   ],
-  "refresh": "1m",
+  "refresh": "30s",
   "schemaVersion": 22,
   "style": "dark",
   "tags": [
@@ -3288,7 +3280,8 @@
         "datasource": "${DS_INFLUXDB}",
         "definition": "SHOW TAG VALUES FROM \"nginx\" WITH KEY = \"host\"",
         "hide": 0,
-        "includeAll": true,
+        "includeAll": false,
+        "index": -1,
         "label": null,
         "multi": false,
         "name": "host",
@@ -3307,7 +3300,7 @@
     ]
   },
   "time": {
-    "from": "now-5m",
+    "from": "now-24h",
     "to": "now"
   },
   "timepicker": {
@@ -3338,5 +3331,8 @@
   "timezone": "",
   "title": "Nginx",
   "uid": "GqFjuAgmk1",
-  "version": 9
+  "variables": {
+    "list": []
+  },
+  "version": 5
 }

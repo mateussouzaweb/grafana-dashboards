@@ -14,7 +14,7 @@
       "type": "grafana",
       "id": "grafana",
       "name": "Grafana",
-      "version": "6.6.1"
+      "version": "6.7.1"
     },
     {
       "type": "panel",
@@ -44,6 +44,7 @@
   "annotations": {
     "list": [
       {
+        "$$hashKey": "object:9008",
         "builtIn": 1,
         "datasource": "-- Grafana --",
         "enable": true,
@@ -59,7 +60,7 @@
   "gnetId": 11501,
   "graphTooltip": 0,
   "id": null,
-  "iteration": 1583519006512,
+  "iteration": 1585861869560,
   "links": [
     {
       "icon": "external link",
@@ -115,7 +116,6 @@
       "maxPerRow": 6,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -219,7 +219,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -340,7 +339,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -463,7 +461,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -558,7 +555,6 @@
       "interval": "$interval",
       "isNew": true,
       "links": [],
-      "options": {},
       "pageSize": 10,
       "scroll": false,
       "showHeader": true,
@@ -1648,8 +1644,8 @@
         "auto_min": "10s",
         "current": {
           "selected": false,
-          "text": "10s",
-          "value": "10s"
+          "text": "1s",
+          "value": "1s"
         },
         "hide": 0,
         "label": null,
@@ -1661,7 +1657,7 @@
             "value": "$__auto_interval_interval"
           },
           {
-            "selected": false,
+            "selected": true,
             "text": "1s",
             "value": "1s"
           },
@@ -1671,7 +1667,7 @@
             "value": "5s"
           },
           {
-            "selected": true,
+            "selected": false,
             "text": "10s",
             "value": "10s"
           },
@@ -1747,7 +1743,8 @@
         "datasource": "${DS_INFLUXDB}",
         "definition": "SHOW TAG VALUES FROM \"influxdb\" WITH KEY = \"host\"",
         "hide": 0,
-        "includeAll": true,
+        "includeAll": false,
+        "index": -1,
         "label": "host",
         "multi": false,
         "name": "host",
@@ -1766,7 +1763,7 @@
     ]
   },
   "time": {
-    "from": "now-5m",
+    "from": "now-24h",
     "to": "now"
   },
   "timepicker": {
@@ -1797,5 +1794,8 @@
   "timezone": "",
   "title": "InfluxDB",
   "uid": "4b3GMPLZz",
+  "variables": {
+    "list": []
+  },
   "version": 2
 }

@@ -14,7 +14,7 @@
       "type": "grafana",
       "id": "grafana",
       "name": "Grafana",
-      "version": "6.6.1"
+      "version": "6.7.1"
     },
     {
       "type": "panel",
@@ -38,6 +38,7 @@
   "annotations": {
     "list": [
       {
+        "$$hashKey": "object:10017",
         "builtIn": 1,
         "datasource": "-- Grafana --",
         "enable": false,
@@ -52,10 +53,10 @@
   },
   "description": "by MateusSouzaWeb",
   "editable": true,
-  "gnetId": 11496,
+  "gnetId": 11862,
   "graphTooltip": 0,
   "id": null,
-  "iteration": 1583519253114,
+  "iteration": 1585861942491,
   "links": [
     {
       "icon": "external link",
@@ -122,7 +123,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -248,7 +248,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -4838,7 +4837,8 @@
         "datasource": "${DS_INFLUXDB}",
         "definition": "SHOW TAG VALUES FROM \"system\" WITH KEY = \"host\"",
         "hide": 0,
-        "includeAll": true,
+        "includeAll": false,
+        "index": -1,
         "label": "host",
         "multi": false,
         "name": "host",
@@ -4852,7 +4852,7 @@
         "tags": [],
         "tagsQuery": "",
         "type": "query",
-        "useTags": true
+        "useTags": false
       },
       {
         "allValue": null,
@@ -4861,6 +4861,7 @@
         "definition": "SHOW TAG VALUES FROM \"net\" WITH KEY = \"interface\" WHERE \"host\" =~ /$host/ AND \"interface\" != 'all'",
         "hide": 0,
         "includeAll": true,
+        "index": -1,
         "label": "interface",
         "multi": true,
         "name": "interface",
@@ -4899,5 +4900,8 @@
   "timezone": "",
   "title": "Network",
   "uid": "IbXGWulWz",
-  "version": 6
+  "variables": {
+    "list": []
+  },
+  "version": 2
 }
