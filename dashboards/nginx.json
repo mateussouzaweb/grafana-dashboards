@@ -14,7 +14,7 @@
       "type": "grafana",
       "id": "grafana",
       "name": "Grafana",
-      "version": "6.7.1"
+      "version": "6.7.2"
     },
     {
       "type": "panel",
@@ -54,7 +54,7 @@
   "gnetId": 11498,
   "graphTooltip": 0,
   "id": null,
-  "iteration": 1585861957233,
+  "iteration": 1586720503980,
   "links": [
     {
       "icon": "external link",
@@ -85,8 +85,8 @@
         "thresholdMarkers": true
       },
       "gridPos": {
-        "h": 3,
-        "w": 4,
+        "h": 4,
+        "w": 24,
         "x": 0,
         "y": 0
       },
@@ -150,7 +150,7 @@
             [
               {
                 "params": [
-                  "request"
+                  "request_time"
                 ],
                 "type": "field"
               },
@@ -209,8 +209,8 @@
       "gridPos": {
         "h": 3,
         "w": 4,
-        "x": 4,
-        "y": 0
+        "x": 0,
+        "y": 4
       },
       "hideTimeOverride": false,
       "id": 46,
@@ -219,10 +219,12 @@
       "mappingType": 1,
       "mappingTypes": [
         {
+          "$$hashKey": "object:305",
           "name": "value to text",
           "value": 1
         },
         {
+          "$$hashKey": "object:306",
           "name": "range to text",
           "value": 2
         }
@@ -275,7 +277,7 @@
             [
               {
                 "params": [
-                  "request"
+                  "request_time"
                 ],
                 "type": "field"
               },
@@ -293,7 +295,7 @@
             },
             {
               "condition": "AND",
-              "key": "resp_code",
+              "key": "status",
               "operator": "=",
               "value": "200"
             }
@@ -308,6 +310,137 @@
       "valueFontSize": "80%",
       "valueMaps": [
         {
+          "$$hashKey": "object:308",
+          "op": "=",
+          "text": "0",
+          "value": "null"
+        }
+      ],
+      "valueName": "total"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorValue": false,
+      "colors": [
+        "#3f6833",
+        "#967302",
+        "#bf1b00"
+      ],
+      "datasource": "${DS_INFLUXDB}",
+      "format": "none",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 4,
+        "x": 4,
+        "y": 4
+      },
+      "hideTimeOverride": false,
+      "id": 77,
+      "interval": "$interval",
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "$$hashKey": "object:305",
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "$$hashKey": "object:306",
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": true
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "groupBy": [
+            {
+              "params": [
+                "$interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "nginx_access_log",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "query": "SELECT count(\"request\") FROM \"nginx_access_log\" WHERE (\"host\" =~ /^$host$/ AND \"resp_code\" = '200') AND $timeFilter GROUP BY time($__interval) fill(null)",
+          "rawQuery": false,
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "request_time"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "count"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "status",
+              "operator": "=",
+              "value": "201"
+            }
+          ]
+        }
+      ],
+      "thresholds": "3000,10000,40000",
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "HTTP 201 (Created)",
+      "type": "singlestat",
+      "valueFontSize": "80%",
+      "valueMaps": [
+        {
+          "$$hashKey": "object:308",
           "op": "=",
           "text": "0",
           "value": "null"
@@ -337,7 +470,7 @@
         "h": 3,
         "w": 4,
         "x": 8,
-        "y": 0
+        "y": 4
       },
       "id": 62,
       "interval": "$interval",
@@ -399,7 +532,7 @@
             [
               {
                 "params": [
-                  "request"
+                  "request_time"
                 ],
                 "type": "field"
               },
@@ -417,7 +550,7 @@
             },
             {
               "condition": "AND",
-              "key": "resp_code",
+              "key": "status",
               "operator": "=",
               "value": "301"
             }
@@ -459,7 +592,7 @@
         "h": 3,
         "w": 4,
         "x": 12,
-        "y": 0
+        "y": 4
       },
       "id": 64,
       "interval": "$interval",
@@ -521,7 +654,7 @@
             [
               {
                 "params": [
-                  "request"
+                  "request_time"
                 ],
                 "type": "field"
               },
@@ -539,7 +672,7 @@
             },
             {
               "condition": "AND",
-              "key": "resp_code",
+              "key": "status",
               "operator": "=",
               "value": "302"
             }
@@ -581,7 +714,7 @@
         "h": 3,
         "w": 4,
         "x": 16,
-        "y": 0
+        "y": 4
       },
       "id": 66,
       "interval": "$interval",
@@ -643,7 +776,7 @@
             [
               {
                 "params": [
-                  "request"
+                  "request_time"
                 ],
                 "type": "field"
               },
@@ -661,7 +794,7 @@
             },
             {
               "condition": "AND",
-              "key": "resp_code",
+              "key": "status",
               "operator": "=",
               "value": "304"
             }
@@ -703,9 +836,9 @@
         "h": 3,
         "w": 4,
         "x": 20,
-        "y": 0
+        "y": 4
       },
-      "id": 58,
+      "id": 78,
       "interval": "$interval",
       "links": [],
       "mappingType": 1,
@@ -765,7 +898,7 @@
             [
               {
                 "params": [
-                  "request"
+                  "request_time"
                 ],
                 "type": "field"
               },
@@ -783,15 +916,15 @@
             },
             {
               "condition": "AND",
-              "key": "resp_code",
+              "key": "status",
               "operator": "=",
-              "value": "500"
+              "value": "307"
             }
           ]
         }
       ],
       "thresholds": "10,30,80",
-      "title": "HTTP 500 (Internal Server Error)",
+      "title": "HTTP 307 (Temporary Redirect)",
       "type": "singlestat",
       "valueFontSize": "80%",
       "valueMaps": [
@@ -825,7 +958,7 @@
         "h": 3,
         "w": 4,
         "x": 0,
-        "y": 3
+        "y": 7
       },
       "id": 48,
       "interval": "$interval",
@@ -887,7 +1020,7 @@
             [
               {
                 "params": [
-                  "request"
+                  "request_time"
                 ],
                 "type": "field"
               },
@@ -905,7 +1038,7 @@
             },
             {
               "condition": "AND",
-              "key": "resp_code",
+              "key": "status",
               "operator": "=",
               "value": "400"
             }
@@ -947,7 +1080,7 @@
         "h": 3,
         "w": 4,
         "x": 4,
-        "y": 3
+        "y": 7
       },
       "id": 50,
       "interval": "$interval",
@@ -1009,7 +1142,7 @@
             [
               {
                 "params": [
-                  "request"
+                  "request_time"
                 ],
                 "type": "field"
               },
@@ -1027,7 +1160,7 @@
             },
             {
               "condition": "AND",
-              "key": "resp_code",
+              "key": "status",
               "operator": "=",
               "value": "401"
             }
@@ -1069,7 +1202,7 @@
         "h": 3,
         "w": 4,
         "x": 8,
-        "y": 3
+        "y": 7
       },
       "id": 52,
       "interval": "$interval",
@@ -1131,7 +1264,7 @@
             [
               {
                 "params": [
-                  "request"
+                  "request_time"
                 ],
                 "type": "field"
               },
@@ -1149,7 +1282,7 @@
             },
             {
               "condition": "AND",
-              "key": "resp_code",
+              "key": "status",
               "operator": "=",
               "value": "403"
             }
@@ -1191,7 +1324,7 @@
         "h": 3,
         "w": 4,
         "x": 12,
-        "y": 3
+        "y": 7
       },
       "id": 54,
       "interval": "$interval",
@@ -1253,7 +1386,7 @@
             [
               {
                 "params": [
-                  "request"
+                  "request_time"
                 ],
                 "type": "field"
               },
@@ -1271,7 +1404,7 @@
             },
             {
               "condition": "AND",
-              "key": "resp_code",
+              "key": "status",
               "operator": "=",
               "value": "404"
             }
@@ -1313,7 +1446,7 @@
         "h": 3,
         "w": 4,
         "x": 16,
-        "y": 3
+        "y": 7
       },
       "id": 56,
       "interval": "$interval",
@@ -1375,7 +1508,7 @@
             [
               {
                 "params": [
-                  "request"
+                  "request_time"
                 ],
                 "type": "field"
               },
@@ -1393,7 +1526,7 @@
             },
             {
               "condition": "AND",
-              "key": "resp_code",
+              "key": "status",
               "operator": "=",
               "value": "405"
             }
@@ -1435,9 +1568,9 @@
         "h": 3,
         "w": 4,
         "x": 20,
-        "y": 3
+        "y": 7
       },
-      "id": 60,
+      "id": 79,
       "interval": "$interval",
       "links": [],
       "mappingType": 1,
@@ -1497,7 +1630,7 @@
             [
               {
                 "params": [
-                  "request"
+                  "request_time"
                 ],
                 "type": "field"
               },
@@ -1515,7 +1648,251 @@
             },
             {
               "condition": "AND",
-              "key": "resp_code",
+              "key": "status",
+              "operator": "=",
+              "value": "408"
+            }
+          ]
+        }
+      ],
+      "thresholds": "10,30,80",
+      "title": "HTTP  408 (Request Timeout)",
+      "type": "singlestat",
+      "valueFontSize": "80%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "0",
+          "value": "null"
+        }
+      ],
+      "valueName": "total"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorValue": false,
+      "colors": [
+        "#299c46",
+        "rgba(237, 129, 40, 0.89)",
+        "#d44a3a"
+      ],
+      "datasource": "${DS_INFLUXDB}",
+      "format": "none",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 4,
+        "x": 0,
+        "y": 10
+      },
+      "id": 58,
+      "interval": "$interval",
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": true
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "groupBy": [
+            {
+              "params": [
+                "$interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "nginx_access_log",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "request_time"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "count"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "status",
+              "operator": "=",
+              "value": "500"
+            }
+          ]
+        }
+      ],
+      "thresholds": "10,30,80",
+      "title": "HTTP 500 (Internal Server Error)",
+      "type": "singlestat",
+      "valueFontSize": "80%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "0",
+          "value": "null"
+        }
+      ],
+      "valueName": "total"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorValue": false,
+      "colors": [
+        "#299c46",
+        "rgba(237, 129, 40, 0.89)",
+        "#d44a3a"
+      ],
+      "datasource": "${DS_INFLUXDB}",
+      "format": "none",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 4,
+        "x": 4,
+        "y": 10
+      },
+      "id": 83,
+      "interval": "$interval",
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": true
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "groupBy": [
+            {
+              "params": [
+                "$interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "nginx_access_log",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "request_time"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "count"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "status",
               "operator": "=",
               "value": "502"
             }
@@ -1524,6 +1901,497 @@
       ],
       "thresholds": "10,30,80",
       "title": "HTTP 502 (Bad Gateway)",
+      "type": "singlestat",
+      "valueFontSize": "80%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "0",
+          "value": "null"
+        }
+      ],
+      "valueName": "total"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorValue": false,
+      "colors": [
+        "#299c46",
+        "rgba(237, 129, 40, 0.89)",
+        "#d44a3a"
+      ],
+      "datasource": "${DS_INFLUXDB}",
+      "format": "none",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 4,
+        "x": 8,
+        "y": 10
+      },
+      "id": 82,
+      "interval": "$interval",
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": true
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "groupBy": [
+            {
+              "params": [
+                "$interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "nginx_access_log",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "request_time"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "count"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "status",
+              "operator": "=",
+              "value": "503"
+            }
+          ]
+        }
+      ],
+      "thresholds": "10,30,80",
+      "title": "HTTP 503 (Service Unavailable)",
+      "type": "singlestat",
+      "valueFontSize": "80%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "0",
+          "value": "null"
+        }
+      ],
+      "valueName": "total"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorValue": false,
+      "colors": [
+        "#299c46",
+        "rgba(237, 129, 40, 0.89)",
+        "#d44a3a"
+      ],
+      "datasource": "${DS_INFLUXDB}",
+      "format": "none",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 4,
+        "x": 12,
+        "y": 10
+      },
+      "id": 81,
+      "interval": "$interval",
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "$$hashKey": "object:791",
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "$$hashKey": "object:792",
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": true
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "groupBy": [
+            {
+              "params": [
+                "$interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "nginx_access_log",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "request_time"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "count"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "status",
+              "operator": "=",
+              "value": "504"
+            }
+          ]
+        }
+      ],
+      "thresholds": "10,30,80",
+      "title": "HTTP 504 (Gateway Timeout)",
+      "type": "singlestat",
+      "valueFontSize": "80%",
+      "valueMaps": [
+        {
+          "$$hashKey": "object:794",
+          "op": "=",
+          "text": "0",
+          "value": "null"
+        }
+      ],
+      "valueName": "total"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorValue": false,
+      "colors": [
+        "#299c46",
+        "rgba(237, 129, 40, 0.89)",
+        "#d44a3a"
+      ],
+      "datasource": "${DS_INFLUXDB}",
+      "format": "none",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 4,
+        "x": 16,
+        "y": 10
+      },
+      "id": 84,
+      "interval": "$interval",
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": true
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "groupBy": [
+            {
+              "params": [
+                "$interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "nginx_access_log",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "request_time"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "count"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "status",
+              "operator": "=",
+              "value": "499"
+            }
+          ]
+        }
+      ],
+      "thresholds": "10,30,80",
+      "title": "HTTP 499 (Client Closed Request)",
+      "type": "singlestat",
+      "valueFontSize": "80%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "0",
+          "value": "null"
+        }
+      ],
+      "valueName": "total"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorValue": false,
+      "colors": [
+        "#299c46",
+        "rgba(237, 129, 40, 0.89)",
+        "#d44a3a"
+      ],
+      "datasource": "${DS_INFLUXDB}",
+      "format": "none",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 4,
+        "x": 20,
+        "y": 10
+      },
+      "id": 80,
+      "interval": "$interval",
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": true
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "groupBy": [
+            {
+              "params": [
+                "$interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "nginx_access_log",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "request_time"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "count"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "status",
+              "operator": "=",
+              "value": "444"
+            }
+          ]
+        }
+      ],
+      "thresholds": "10,30,80",
+      "title": "HTTP 444 (Connection Closed Without Response)",
       "type": "singlestat",
       "valueFontSize": "80%",
       "valueMaps": [
@@ -1550,7 +2418,7 @@
         "h": 6,
         "w": 24,
         "x": 0,
-        "y": 6
+        "y": 13
       },
       "hiddenSeries": false,
       "id": 76,
@@ -1564,7 +2432,7 @@
         "min": false,
         "rightSide": true,
         "show": true,
-        "sideWidth": 280,
+        "sideWidth": 320,
         "sort": "current",
         "sortDesc": true,
         "total": false,
@@ -1587,7 +2455,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "alias": "",
+          "alias": "$col",
           "dsType": "influxdb",
           "groupBy": [
             {
@@ -1795,7 +2663,7 @@
       "tooltip": {
         "msResolution": false,
         "shared": true,
-        "sort": 0,
+        "sort": 2,
         "value_type": "cumulative"
       },
       "type": "graph",
@@ -1808,6 +2676,7 @@
       },
       "yaxes": [
         {
+          "$$hashKey": "object:1310",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -1816,6 +2685,148 @@
           "show": true
         },
         {
+          "$$hashKey": "object:1311",
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "${DS_INFLUXDB}",
+      "decimals": 0,
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 6,
+        "w": 24,
+        "x": 0,
+        "y": 19
+      },
+      "hiddenSeries": false,
+      "id": 72,
+      "interval": "$interval",
+      "legend": {
+        "alignAsTable": true,
+        "avg": true,
+        "current": true,
+        "hideEmpty": true,
+        "hideZero": true,
+        "max": true,
+        "min": false,
+        "rightSide": true,
+        "show": true,
+        "sideWidth": 320,
+        "sort": "total",
+        "sortDesc": true,
+        "total": true,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "connected",
+      "options": {
+        "dataLinks": []
+      },
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "alias": "$tag_request_method",
+          "groupBy": [
+            {
+              "params": [
+                "$interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "request_method"
+              ],
+              "type": "tag"
+            }
+          ],
+          "measurement": "nginx_access_log",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "query": "SELECT mean(\"resp_bytes\") FROM \"nginx_access_log\" WHERE (\"host\" =~ /^$host$/) AND $timeFilter GROUP BY time($__interval), \"host\", \"resp_code\" fill(null) SLIMIT 10",
+          "rawQuery": false,
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "request_time"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "count"
+              }
+            ]
+          ],
+          "slimit": "",
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            }
+          ]
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "HTTP Requests Method",
+      "tooltip": {
+        "shared": true,
+        "sort": 2,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:2364",
+          "decimals": null,
+          "format": "none",
+          "label": "",
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "$$hashKey": "object:2365",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -1841,7 +2852,7 @@
         "h": 6,
         "w": 24,
         "x": 0,
-        "y": 12
+        "y": 25
       },
       "hiddenSeries": false,
       "hideTimeOverride": false,
@@ -1849,15 +2860,17 @@
       "interval": "$interval",
       "legend": {
         "alignAsTable": true,
-        "avg": false,
-        "current": false,
-        "max": false,
+        "avg": true,
+        "current": true,
+        "hideEmpty": false,
+        "hideZero": false,
+        "max": true,
         "min": false,
         "rightSide": true,
         "show": true,
-        "sideWidth": 280,
-        "total": false,
-        "values": false
+        "sideWidth": 320,
+        "total": true,
+        "values": true
       },
       "lines": true,
       "linewidth": 1,
@@ -1876,7 +2889,58 @@
       "steppedLine": false,
       "targets": [
         {
-          "alias": "HTTP 200",
+          "alias": "HTTP 1XX",
+          "groupBy": [
+            {
+              "params": [
+                "$interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "nginx_access_log",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "query": "SELECT count(\"request\") FROM \"nginx_access_log\" WHERE (\"host\" =~ /^$host$/ AND \"resp_code\" = '400') AND $timeFilter GROUP BY time($interval) fill(null)",
+          "rawQuery": false,
+          "refId": "D",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "request_time"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "count"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "status",
+              "operator": "=~",
+              "value": "/1[0-9][0-9]/"
+            }
+          ]
+        },
+        {
+          "alias": "HTTP 2XX",
           "groupBy": [
             {
               "params": [
@@ -1903,7 +2967,7 @@
             [
               {
                 "params": [
-                  "request"
+                  "request_time"
                 ],
                 "type": "field"
               },
@@ -1921,14 +2985,14 @@
             },
             {
               "condition": "AND",
-              "key": "response_code",
-              "operator": "=",
-              "value": "200"
+              "key": "status",
+              "operator": "=~",
+              "value": "/2[0-9][0-9]/"
             }
           ]
         },
         {
-          "alias": "HTTP 400",
+          "alias": "HTTP 3XX",
           "groupBy": [
             {
               "params": [
@@ -1954,7 +3018,7 @@
             [
               {
                 "params": [
-                  "request"
+                  "request_time"
                 ],
                 "type": "field"
               },
@@ -1972,14 +3036,14 @@
             },
             {
               "condition": "AND",
-              "key": "resp_code",
-              "operator": "=",
-              "value": "400"
+              "key": "status",
+              "operator": "=~",
+              "value": "/3[0-9][0-9]/"
             }
           ]
         },
         {
-          "alias": "HTTP 401",
+          "alias": "HTTP 4XX",
           "groupBy": [
             {
               "params": [
@@ -2005,7 +3069,7 @@
             [
               {
                 "params": [
-                  "request"
+                  "request_time"
                 ],
                 "type": "field"
               },
@@ -2023,14 +3087,14 @@
             },
             {
               "condition": "AND",
-              "key": "resp_code",
-              "operator": "=",
-              "value": "401"
+              "key": "status",
+              "operator": "=~",
+              "value": "/4[0-9][0-9]/"
             }
           ]
         },
         {
-          "alias": "HTTP 403",
+          "alias": "HTTP 5XX",
           "groupBy": [
             {
               "params": [
@@ -2056,7 +3120,7 @@
             [
               {
                 "params": [
-                  "request"
+                  "request_time"
                 ],
                 "type": "field"
               },
@@ -2074,162 +3138,9 @@
             },
             {
               "condition": "AND",
-              "key": "resp_code",
-              "operator": "=",
-              "value": "403"
-            }
-          ]
-        },
-        {
-          "alias": "HTTP 404",
-          "groupBy": [
-            {
-              "params": [
-                "$interval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "null"
-              ],
-              "type": "fill"
-            }
-          ],
-          "measurement": "nginx_access_log",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "query": "SELECT count(\"request\") FROM \"nginx_access_log\" WHERE (\"host\" =~ /^$host$/ AND \"resp_code\" = '400') AND $timeFilter GROUP BY time($interval) fill(null)",
-          "rawQuery": false,
-          "refId": "D",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "request"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "count"
-              }
-            ]
-          ],
-          "tags": [
-            {
-              "key": "host",
+              "key": "status",
               "operator": "=~",
-              "value": "/^$host$/"
-            },
-            {
-              "condition": "AND",
-              "key": "resp_code",
-              "operator": "=",
-              "value": "404"
-            }
-          ]
-        },
-        {
-          "alias": "HTTP 500",
-          "groupBy": [
-            {
-              "params": [
-                "$interval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "null"
-              ],
-              "type": "fill"
-            }
-          ],
-          "measurement": "nginx_access_log",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "query": "SELECT count(\"request\") FROM \"nginx_access_log\" WHERE (\"host\" =~ /^$host$/ AND \"resp_code\" = '400') AND $timeFilter GROUP BY time($interval) fill(null)",
-          "rawQuery": false,
-          "refId": "E",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "request"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "count"
-              }
-            ]
-          ],
-          "tags": [
-            {
-              "key": "host",
-              "operator": "=~",
-              "value": "/^$host$/"
-            },
-            {
-              "condition": "AND",
-              "key": "resp_code",
-              "operator": "=",
-              "value": "500"
-            }
-          ]
-        },
-        {
-          "alias": "HTTP 502",
-          "groupBy": [
-            {
-              "params": [
-                "$interval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "null"
-              ],
-              "type": "fill"
-            }
-          ],
-          "measurement": "nginx_access_log",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "query": "SELECT count(\"request\") FROM \"nginx_access_log\" WHERE (\"host\" =~ /^$host$/ AND \"resp_code\" = '400') AND $timeFilter GROUP BY time($interval) fill(null)",
-          "rawQuery": false,
-          "refId": "F",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "request"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "count"
-              }
-            ]
-          ],
-          "tags": [
-            {
-              "key": "host",
-              "operator": "=~",
-              "value": "/^$host$/"
-            },
-            {
-              "condition": "AND",
-              "key": "resp_code",
-              "operator": "=",
-              "value": "502"
+              "value": "/5[0-9][0-9]/"
             }
           ]
         }
@@ -2241,7 +3152,7 @@
       "title": "HTTP Code",
       "tooltip": {
         "shared": true,
-        "sort": 0,
+        "sort": 2,
         "value_type": "individual"
       },
       "type": "graph",
@@ -2254,6 +3165,8 @@
       },
       "yaxes": [
         {
+          "$$hashKey": "object:2241",
+          "decimals": null,
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -2262,6 +3175,7 @@
           "show": true
         },
         {
+          "$$hashKey": "object:2242",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -2281,152 +3195,13 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": "${DS_INFLUXDB}",
-      "decimals": 0,
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
         "h": 6,
         "w": 24,
         "x": 0,
-        "y": 18
-      },
-      "hiddenSeries": false,
-      "id": 72,
-      "interval": "$interval",
-      "legend": {
-        "alignAsTable": true,
-        "avg": true,
-        "current": false,
-        "hideEmpty": true,
-        "hideZero": true,
-        "max": false,
-        "min": false,
-        "rightSide": true,
-        "show": true,
-        "sideWidth": 280,
-        "sort": "total",
-        "sortDesc": true,
-        "total": true,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 1,
-      "links": [],
-      "nullPointMode": "connected",
-      "options": {
-        "dataLinks": []
-      },
-      "percentage": false,
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "alias": "$tag_verb",
-          "groupBy": [
-            {
-              "params": [
-                "$interval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "verb"
-              ],
-              "type": "tag"
-            }
-          ],
-          "measurement": "nginx_access_log",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "query": "SELECT mean(\"resp_bytes\") FROM \"nginx_access_log\" WHERE (\"host\" =~ /^$host$/) AND $timeFilter GROUP BY time($__interval), \"host\", \"resp_code\" fill(null) SLIMIT 10",
-          "rawQuery": false,
-          "refId": "A",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "request"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "count"
-              }
-            ]
-          ],
-          "slimit": "",
-          "tags": [
-            {
-              "key": "host",
-              "operator": "=~",
-              "value": "/^$host$/"
-            }
-          ]
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeRegions": [],
-      "timeShift": null,
-      "title": "HTTP Requests Method  (count)",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "decimals": null,
-          "format": "none",
-          "label": "",
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        },
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": "${DS_INFLUXDB}",
-      "fill": 1,
-      "fillGradient": 0,
-      "gridPos": {
-        "h": 6,
-        "w": 24,
-        "x": 0,
-        "y": 24
+        "y": 31
       },
       "hiddenSeries": false,
       "id": 74,
@@ -2441,7 +3216,7 @@
         "min": false,
         "rightSide": true,
         "show": true,
-        "sideWidth": 280,
+        "sideWidth": 320,
         "sort": "total",
         "sortDesc": true,
         "total": true,
@@ -2464,7 +3239,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "alias": "HTTP 1xx",
+          "alias": "HTTP 1XX",
           "groupBy": [
             {
               "params": [
@@ -2484,7 +3259,7 @@
             [
               {
                 "params": [
-                  "resp_bytes"
+                  "bytes_sent"
                 ],
                 "type": "field"
               },
@@ -2503,14 +3278,14 @@
             },
             {
               "condition": "AND",
-              "key": "resp_code",
+              "key": "status",
               "operator": "=~",
               "value": "/^1/"
             }
           ]
         },
         {
-          "alias": "HTTP  2xx",
+          "alias": "HTTP  2XX",
           "groupBy": [
             {
               "params": [
@@ -2530,7 +3305,7 @@
             [
               {
                 "params": [
-                  "resp_bytes"
+                  "bytes_sent"
                 ],
                 "type": "field"
               },
@@ -2549,14 +3324,14 @@
             },
             {
               "condition": "AND",
-              "key": "resp_code",
+              "key": "status",
               "operator": "=~",
               "value": "/^2/"
             }
           ]
         },
         {
-          "alias": "HTTP  3xx",
+          "alias": "HTTP  3XX",
           "groupBy": [
             {
               "params": [
@@ -2576,7 +3351,7 @@
             [
               {
                 "params": [
-                  "resp_bytes"
+                  "bytes_sent"
                 ],
                 "type": "field"
               },
@@ -2595,14 +3370,14 @@
             },
             {
               "condition": "AND",
-              "key": "resp_code",
+              "key": "status",
               "operator": "=~",
               "value": "/^3/"
             }
           ]
         },
         {
-          "alias": "HTTP  4xx",
+          "alias": "HTTP  4XX",
           "groupBy": [
             {
               "params": [
@@ -2622,7 +3397,7 @@
             [
               {
                 "params": [
-                  "resp_bytes"
+                  "bytes_sent"
                 ],
                 "type": "field"
               },
@@ -2641,14 +3416,14 @@
             },
             {
               "condition": "AND",
-              "key": "resp_code",
+              "key": "status",
               "operator": "=~",
               "value": "/^4/"
             }
           ]
         },
         {
-          "alias": "HTTP  5xx",
+          "alias": "HTTP  5XX",
           "groupBy": [
             {
               "params": [
@@ -2668,7 +3443,7 @@
             [
               {
                 "params": [
-                  "resp_bytes"
+                  "bytes_sent"
                 ],
                 "type": "field"
               },
@@ -2687,7 +3462,7 @@
             },
             {
               "condition": "AND",
-              "key": "resp_code",
+              "key": "status",
               "operator": "=~",
               "value": "/^5/"
             }
@@ -2714,6 +3489,7 @@
       },
       "yaxes": [
         {
+          "$$hashKey": "object:3037",
           "format": "decbytes",
           "label": null,
           "logBase": 1,
@@ -2722,6 +3498,7 @@
           "show": true
         },
         {
+          "$$hashKey": "object:3038",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -2747,25 +3524,25 @@
         "h": 6,
         "w": 24,
         "x": 0,
-        "y": 30
+        "y": 37
       },
       "hiddenSeries": false,
       "id": 68,
       "interval": "$interval",
       "legend": {
         "alignAsTable": true,
-        "avg": false,
-        "current": false,
+        "avg": true,
+        "current": true,
         "hideEmpty": false,
         "hideZero": false,
-        "max": false,
-        "min": false,
+        "max": true,
+        "min": true,
         "rightSide": true,
         "show": true,
-        "sideWidth": 280,
+        "sideWidth": 320,
         "sortDesc": true,
         "total": false,
-        "values": false
+        "values": true
       },
       "lines": true,
       "linewidth": 1,
@@ -2784,11 +3561,11 @@
       "steppedLine": false,
       "targets": [
         {
-          "alias": "Request time 2**",
+          "alias": "HTTP 1XX",
           "groupBy": [
             {
               "params": [
-                "$__interval"
+                "$interval"
               ],
               "type": "time"
             },
@@ -2827,18 +3604,68 @@
             },
             {
               "condition": "AND",
-              "key": "resp_code",
+              "key": "status",
+              "operator": "=~",
+              "value": "/^1/"
+            }
+          ]
+        },
+        {
+          "alias": "HTTP 2XX",
+          "groupBy": [
+            {
+              "params": [
+                "$interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "hide": false,
+          "measurement": "nginx_access_log",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "E",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "request_time"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "first"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "status",
               "operator": "=~",
               "value": "/^2/"
             }
           ]
         },
         {
-          "alias": "Request time 3**",
+          "alias": "HTTP 3XX",
           "groupBy": [
             {
               "params": [
-                "$__interval"
+                "$interval"
               ],
               "type": "time"
             },
@@ -2879,18 +3706,18 @@
             },
             {
               "condition": "AND",
-              "key": "resp_code",
+              "key": "status",
               "operator": "=~",
               "value": "/^3/"
             }
           ]
         },
         {
-          "alias": "Request time 4**",
+          "alias": "HTTP 4XX",
           "groupBy": [
             {
               "params": [
-                "$__interval"
+                "$interval"
               ],
               "type": "time"
             },
@@ -2931,18 +3758,18 @@
             },
             {
               "condition": "AND",
-              "key": "resp_code",
+              "key": "status",
               "operator": "=~",
               "value": "/^4/"
             }
           ]
         },
         {
-          "alias": "Request time 5**",
+          "alias": "HTTP 5XX",
           "groupBy": [
             {
               "params": [
-                "$__interval"
+                "$interval"
               ],
               "type": "time"
             },
@@ -2983,7 +3810,7 @@
             },
             {
               "condition": "AND",
-              "key": "resp_code",
+              "key": "status",
               "operator": "=~",
               "value": "/^5/"
             }
@@ -2997,7 +3824,7 @@
       "title": "Request Time",
       "tooltip": {
         "shared": true,
-        "sort": 0,
+        "sort": 2,
         "value_type": "individual"
       },
       "type": "graph",
@@ -3010,6 +3837,7 @@
       },
       "yaxes": [
         {
+          "$$hashKey": "object:4955",
           "format": "s",
           "label": null,
           "logBase": 1,
@@ -3018,146 +3846,13 @@
           "show": true
         },
         {
+          "$$hashKey": "object:4956",
           "format": "short",
           "label": null,
           "logBase": 1,
           "max": null,
           "min": null,
           "show": false
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": "${DS_INFLUXDB}",
-      "fill": 1,
-      "fillGradient": 0,
-      "gridPos": {
-        "h": 7,
-        "w": 24,
-        "x": 0,
-        "y": 36
-      },
-      "hiddenSeries": false,
-      "id": 32,
-      "interval": "$interval",
-      "legend": {
-        "alignAsTable": true,
-        "avg": true,
-        "current": true,
-        "hideEmpty": true,
-        "hideZero": true,
-        "max": false,
-        "min": false,
-        "rightSide": true,
-        "show": true,
-        "total": true,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 1,
-      "links": [],
-      "nullPointMode": "null",
-      "options": {
-        "dataLinks": []
-      },
-      "percentage": false,
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "alias": "$tag_verb",
-          "groupBy": [
-            {
-              "params": [
-                "$interval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "verb"
-              ],
-              "type": "tag"
-            }
-          ],
-          "measurement": "nginx_access_log",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "query": "SELECT mean(\"resp_bytes\") FROM \"nginx_access_log\" WHERE (\"host\" =~ /^$host$/) AND $timeFilter GROUP BY time($__interval), \"host\", \"resp_code\" fill(null) SLIMIT 10",
-          "rawQuery": false,
-          "refId": "A",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "request"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "count"
-              }
-            ]
-          ],
-          "slimit": "",
-          "tags": [
-            {
-              "key": "host",
-              "operator": "=~",
-              "value": "/^$host$/"
-            }
-          ]
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeRegions": [],
-      "timeShift": null,
-      "title": "Queries",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "format": "none",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        },
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
         }
       ],
       "yaxis": {
@@ -3300,7 +3995,7 @@
     ]
   },
   "time": {
-    "from": "now-24h",
+    "from": "now-30m",
     "to": "now"
   },
   "timepicker": {
@@ -3334,5 +4029,5 @@
   "variables": {
     "list": []
   },
-  "version": 5
+  "version": 10
 }
